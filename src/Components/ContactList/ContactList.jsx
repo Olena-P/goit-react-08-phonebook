@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getVisibleContacts } from '../../redux/selectors';
+import { getVisibleContacts } from '../../redux/todos/todos-selectors';
 import { List, Item, Button } from "./ContactList.styled";
 import { HiTrash } from 'react-icons/hi';
-import { deleteContact } from '../../redux/operations';
+import { deleteContact } from '../../redux/todos/todos-operations';
 
 export default function ContactList() {
   const contacts = useSelector(getVisibleContacts);

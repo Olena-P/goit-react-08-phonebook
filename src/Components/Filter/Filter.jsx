@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getFilter } from '../../redux/selectors';
-import * as actions from '../../redux/actions';
+import { getFilter } from '../../redux/todos/todos-selectors';
+import * as actions from '../../redux/todos/toddos-actions';
 import { InputFilter, LabelFilter } from "./Filter.styled";
 
 export default function Filter() {

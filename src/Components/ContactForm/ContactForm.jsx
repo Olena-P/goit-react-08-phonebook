@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import * as operations from '../../redux/operations';
-import { getContacts } from '../../redux/selectors';
+import * as operations from '../../redux/todos/todos-operations';
+import { getContacts } from '../../redux/todos/todos-selectors';
 import { Form, Input, Label, Button, Name, Number } from './ContactForm.styled';
 import { HiUser, HiPhone } from 'react-icons/hi';
 

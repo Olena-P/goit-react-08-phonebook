@@ -4,6 +4,7 @@ import {
   combineReducers,
 } from "@reduxjs/toolkit";
 import {
+  persistStore,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -12,7 +13,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import logger from "redux-logger";
-import phonebookReducer from "./reducer";
+import phonebookReducer from "./todos/todos-reducer";
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -33,4 +34,4 @@ export const store = configureStore({
   devTools: process.env.NODE_ENV === "development",
 });
 
-export default store;
+export const persistor = persistStore(store);

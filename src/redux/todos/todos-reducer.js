@@ -12,7 +12,7 @@ import {
   deleteContactSuccess,
   deleteContactError,
   changeFilter,
-} from "./actions";
+} from "./toddos-actions";
 
 const items = createReducer([], {
   [fetchContactsSuccess]: (_, { payload }) => payload,
