@@ -1,0 +1,53 @@
+@import "modern-normalize/modern-normalize.css";
+
+:root {
+  --main-bg-color: #f7c627;
+  --secondary-color: #6d4810;
+  --title-color: #fff;
+  --red-color: #b80f0f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image: url("./images/background.jpg");
+  background-size: 100%;
+  background-color: var(--main-bg-color);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2 {
+  margin: 0;
+  text-align: center;
+  padding: 15px;
+  color: var(--title-color);
+  text-shadow: var(--secondary-color) 1px 0 10px;
+}
