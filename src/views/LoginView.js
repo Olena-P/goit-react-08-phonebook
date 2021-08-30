@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { authOperations } from "../redux/auth";
+import { toast } from "react-toastify";
+import { logIn } from "../redux/auth/auth-operations";
+import Button from "../components/Button";
 
 const styles = {
   form: {
@@ -13,10 +15,23 @@ const styles = {
   },
 };
 
-export default function LoginView() {
-  const dispatch = useDispatch();
+export default function LoginView({ onClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (email === "" || password === "") {
+      toast.error("fill out the form");
+      return;
+    }
+
+    dispatch(logIn({ email, password }));
+    setEmail("");
+    setPassword("");
+  };
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -29,39 +44,35 @@ export default function LoginView() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(authOperations.logIn({ email, password }));
-    setEmail("");
-    setPassword("");
-  };
-
   return (
     <div>
-      <h1>Страница логина</h1>
-
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Почта
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit} style={styles.form}>
+        <label>
+          Email
           <input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            style={styles.label}
           />
         </label>
-
-        <label style={styles.label}>
-          Пароль
+        <label>
+          Password
           <input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            style={styles.label}
           />
         </label>
 
-        <button type="submit">Войти</button>
+        <Button onClick={onClick}>Log in</Button>
+        {/* <button type="submit" style={styles.btn}>
+          Log in
+        </button> */}
       </form>
     </div>
   );

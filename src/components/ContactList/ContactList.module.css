@@ -1,0 +1,36 @@
+.list {
+  margin: 0;
+  padding: 0;
+  padding: 10px 30px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.span {
+  margin-right: 20px;
+}
+
+.button {
+  margin-left: 20px;
+  display: block;
+  margin-left: auto;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 250ms ease 0s;
+}
+
+.button:hover {
+  color: rgb(168, 19, 2);
+  transform: scale(1.3);
+}

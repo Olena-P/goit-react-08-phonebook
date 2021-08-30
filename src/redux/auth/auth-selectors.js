@@ -1,9 +1,5 @@
-const getIsLoggedIn = (state) => state.auth.isLoggedIn;
+export const getIsLoggedIn = (state) => state.auth.isLoggedIn;
 
-const getUsername = (state) => state.auth.user.name;
+export const getUserName = (state) => state.auth.user.name;
 
-const authSelectors = {
-  getIsLoggedIn,
-  getUsername,
-};
-export default authSelectors;
+export const getIsRefreshingUser = (state) => state.auth.isRefreshingUser;

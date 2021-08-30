@@ -1,34 +1,64 @@
 import { createSlice } from "@reduxjs/toolkit";
-import authOperations from "./auth-operations";
+import { register, logIn, logOut, fetchCurrentUser } from "./auth-operations";
 
 const initialState = {
   user: { name: null, email: null },
   token: null,
   isLoggedIn: false,
+  error: null,
+  isRefreshingUser: false,
 };
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
   extraReducers: {
-    [authOperations.register.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
+    [register.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.token = payload.token;
       state.isLoggedIn = true;
     },
-    [authOperations.logIn.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
+    [register.pending](state) {
+      state.error = null;
+    },
+    [register.rejected](state, { payload }) {
+      state.error = payload;
+    },
+    [logIn.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.token = payload.token;
       state.isLoggedIn = true;
     },
-    [authOperations.logOut.fulfilled](state, action) {
+    [logIn.pending](state) {
+      state.error = null;
+    },
+    [logIn.rejected](state, { payload }) {
+      state.error = payload;
+    },
+    [logOut.fulfilled](state) {
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
     },
-    [authOperations.fetchCurrentUser.fulfilled](state, action) {
-      state.user = action.payload;
+    [logOut.pending](state) {
+      state.error = null;
+    },
+    [logOut.rejected](state, { payload }) {
+      state.error = payload;
+    },
+    [fetchCurrentUser.pending](state) {
+      state.isRefreshingUser = true;
+      state.error = null;
+    },
+    [fetchCurrentUser.fulfilled](state, { payload }) {
+      state.user = payload;
       state.isLoggedIn = true;
+      state.isRefreshingUser = false;
+    },
+
+    [fetchCurrentUser.rejected](state, { payload }) {
+      state.error = payload;
+      state.isRefreshingUser = false;
     },
   },
 });

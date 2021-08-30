@@ -1,0 +1,22 @@
+.btn {
+  width: max-content;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--secondary-color);
+  transition: transform 0.25s cubic-bezier(0.77, 0, 0.175, 1);
+  font-size: large;
+  background-color: var(--main-bg-color);
+  color: var(--secondary-color);
+}
+
+.btn:hover {
+  background-color: var(--main-bg-color);
+  transform: scale(1.05);
+  border: none;
+  outline: none;
+}
