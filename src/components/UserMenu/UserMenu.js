@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { getUserName } from "../../redux/auth/auth-selectors";
 import { logOut } from "../../redux/auth/auth-operations";
 import Button from "../Button";
+import { HiUser } from "react-icons/hi";
 
 const styles = {
   container: {
@@ -21,15 +21,10 @@ export default function UserMenu() {
 
   return (
     <div style={styles.container}>
-      <AccountCircleIcon
-        style={{ marginRight: "10px", fill: "#23b1e7", fontSize: "40" }}
-      />
+      <HiUser />
       <span style={styles.name}>Welcome, {name}!</span>
 
       <Button onClick={() => dispatch(logOut())}>Logout</Button>
-      {/* <button type="button" onClick={() => dispatch(logOut())}>
-        Logout
-      </button> */}
     </div>
   );
 }

@@ -10,10 +10,10 @@ const styles = {
     padding: 12,
     fontWeight: 700,
     fontSize: "18px",
-    color: "#2A363B",
+    color: "var(--secondary-color)",
   },
   activeLink: {
-    color: "#23b1e7",
+    color: "var(--title-color)",
   },
 };
 

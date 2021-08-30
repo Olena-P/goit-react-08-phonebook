@@ -70,9 +70,6 @@ export default function LoginView({ onClick }) {
         </label>
 
         <Button onClick={onClick}>Log in</Button>
-        {/* <button type="submit" style={styles.btn}>
-          Log in
-        </button> */}
       </form>
     </div>
   );

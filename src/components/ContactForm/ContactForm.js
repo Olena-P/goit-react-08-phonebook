@@ -4,8 +4,7 @@ import { toast } from "react-toastify";
 import * as operations from "../../redux/contacts/contacts-operations";
 import { getContacts } from "../../redux/contacts/contacts-selectors";
 import s from "./ContactForm.module.css";
-import { MdPerson } from "react-icons/md";
-import { MdStayPrimaryPortrait } from "react-icons/md";
+import { HiUser, HiPhone } from "react-icons/hi";
 
 export default function ContactForm() {
   const contacts = useSelector(getContacts);
@@ -71,14 +70,14 @@ export default function ContactForm() {
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <label className={s.label}>
-        <MdPerson></MdPerson>
+        <HiUser></HiUser>
         Name
         <input
           className={s.input}
           type="text"
           name="name"
           value={name}
-          placeholder="Oleksandr Vasylchuk"
+          placeholder="Nancy Chang"
           onChange={handleChangeName}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           maxLength="33"
@@ -86,9 +85,10 @@ export default function ContactForm() {
       </label>
 
       <label className={s.label}>
-        <MdStayPrimaryPortrait></MdStayPrimaryPortrait>
+        <HiPhone></HiPhone>
         Number
         <input
+          className={s.input}
           type="tel"
           name="number"
           value={number}

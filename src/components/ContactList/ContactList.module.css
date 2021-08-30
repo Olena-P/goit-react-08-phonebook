@@ -1,14 +1,14 @@
 .list {
-  margin: 0;
-  padding: 0;
-  padding: 10px 30px;
+  padding: 25px;
 }
 
 .item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   font-size: 16px;
+  color: var(--title-color);
+  text-shadow: var(--secondary-color) 1px 0 10px;
 }
 
 .item:not(:last-child) {
@@ -20,17 +20,19 @@
 }
 
 .button {
-  margin-left: 20px;
-  display: block;
-  margin-left: auto;
-  padding: 10px;
+  padding: 0px;
+  margin-left: 25px;
+  transition: transform 0.25s cubic-bezier(0.77, 0, 0.175, 1);
+  color: var(--secondary-color);
+  background-color: Transparent;
+  background-repeat: no-repeat;
   border: none;
   cursor: pointer;
-  background-color: transparent;
-  transition: all 250ms ease 0s;
+  overflow: hidden;
+  font-size: 24px;
 }
 
 .button:hover {
-  color: rgb(168, 19, 2);
+  color: var(--red-color);
   transform: scale(1.3);
 }
