@@ -14,6 +14,7 @@ const styles = {
   },
   activeLink: {
     color: "var(--title-color)",
+    textShadow: "var(--secondary-color) 1px 0 10px",
   },
 };
 

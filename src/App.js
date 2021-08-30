@@ -36,7 +36,7 @@ export default function App() {
             <Loader
               style={{ display: "flex", justifyContent: "center" }}
               type="Puff"
-              color=" var(--main-bg-color)"
+              color="var(--secondary-color)"
               height={100}
               width={100}
               timeout={3000}

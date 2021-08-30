@@ -12,7 +12,7 @@ const styles = {
   },
   activeLink: {
     color: "var(--title-color)",
-    // text-shadow: var(--secondary-color) 1px 0 10px;
+    textShadow: "var(--secondary-color) 1px 0 10px",
   },
 };
 

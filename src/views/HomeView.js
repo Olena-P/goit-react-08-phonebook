@@ -9,7 +9,7 @@ const styles = {
     justifyContent: "center",
   },
   image: {
-    width: "700px",
+    width: "500px",
   },
 };
 
