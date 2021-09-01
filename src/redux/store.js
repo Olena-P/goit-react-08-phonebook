@@ -1,8 +1,4 @@
-import {
-  configureStore,
-  getDefaultMiddleware,
-  // combineReducers,
-} from "@reduxjs/toolkit";
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import {
   persistStore,
   persistReducer,
@@ -32,10 +28,6 @@ const persistConfig = {
   storage,
   whitelist: ["token"],
 };
-
-// const rootReducer = combineReducers({
-//   contacts: phonebookReducer,
-// });
 
 export const store = configureStore({
   reducer: {

@@ -10,7 +10,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
 import { fetchCurrentUser } from "./redux/auth/auth-operations";
 import { getIsRefreshingUser } from "./redux/auth/auth-selectors";
-import s from "./App.css";
 
 const HomeView = lazy(() => import("./views/HomeView"));
 const RegisterView = lazy(() => import("./views/RegisterView"));
@@ -40,7 +39,6 @@ export default function App() {
               height={100}
               width={100}
               timeout={3000}
-              className={s.loader}
             />
           }
         >
