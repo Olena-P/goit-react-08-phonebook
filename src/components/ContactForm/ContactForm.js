@@ -70,14 +70,14 @@ export default function ContactForm() {
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <label className={s.label}>
-        <HiUser></HiUser>
-        Name
+        <HiUser className={s.svg}></HiUser>
+        <p className={s.p}>Name</p>
         <input
           className={s.input}
           type="text"
           name="name"
           value={name}
-          placeholder="Nancy Chang"
+          placeholder="Olena Pavliuk"
           onChange={handleChangeName}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           maxLength="33"
@@ -85,8 +85,8 @@ export default function ContactForm() {
       </label>
 
       <label className={s.label}>
-        <HiPhone></HiPhone>
-        Number
+        <HiPhone className={s.svg}></HiPhone>
+        <p className={s.p}>Number</p>
         <input
           className={s.input}
           type="tel"

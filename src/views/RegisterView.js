@@ -23,7 +23,7 @@ const styles = {
     fontSize: 18,
     fontWeight: 400,
     color: "var(--title-color)",
-    marginBottom: 10,
+    marginBottom: 20,
   },
   input: {
     width: 200,

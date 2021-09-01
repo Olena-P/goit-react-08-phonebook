@@ -3,15 +3,26 @@
   border-radius: 15px;
   background-color: var(--secondary-color);
   padding: 25px;
+  margin: 25px 0;
 }
 
 .label {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 20px;
+  align-items: center;
   font-size: 18px;
   font-weight: 400;
+  color: var(--title-color);
+  margin-bottom: 20px;
+}
+
+.svg {
+  color: var(--title-color);
+}
+
+.p {
+  color: var(--title-color);
 }
 
 .input {

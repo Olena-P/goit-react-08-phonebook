@@ -10,16 +10,17 @@ export default function Filter() {
   const onChange = (event) => dispatch(changeFilter(event.target.value));
 
   return (
-    <>
+    <div className={s.div}>
       <label className={s.filter}>
         Find contacts by name
         <input
           className={s.input}
           type="text"
           value={value}
+          placeholder="Olena..."
           onChange={onChange}
         />
       </label>
-    </>
+    </div>
   );
 }

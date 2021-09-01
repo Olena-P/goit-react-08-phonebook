@@ -47,7 +47,6 @@ h1,
 h2 {
   margin: 0;
   text-align: center;
-  padding: 15px;
   color: var(--title-color);
   text-shadow: var(--secondary-color) 1px 0 10px;
 }

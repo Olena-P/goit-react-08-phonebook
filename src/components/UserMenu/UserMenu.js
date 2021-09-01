@@ -9,9 +9,16 @@ const styles = {
     display: "flex",
     alignItems: "center",
   },
+  svg: {
+    marginRight: 12,
+    color: "var(--title-color)",
+    filter: "drop-shadow(1px 0 7px var(--secondary-color))",
+  },
   name: {
     fontWeight: 700,
     marginRight: 12,
+    color: "var(--title-color)",
+    textShadow: "var(--secondary-color) 1px 0 10px",
   },
 };
 
@@ -21,7 +28,7 @@ export default function UserMenu() {
 
   return (
     <div style={styles.container}>
-      <HiUser />
+      <HiUser style={styles.svg} />
       <span style={styles.name}>Welcome, {name}!</span>
 
       <Button onClick={() => dispatch(logOut())}>Logout</Button>
